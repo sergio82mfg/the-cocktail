@@ -1,0 +1,104 @@
+@import '../../variables.scss';
+
+.information {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  border-radius: 2px;
+
+  .title-section {
+    display: flex;
+    position: relative;
+    text-align: center;
+    margin-bottom: 3px;
+  }
+
+  .title-primary {
+    &.collapsible {
+      &:before {
+        display: inline-block;
+        content: '';
+        width: 20px;
+        height: 17px;
+        margin-right: 20px;
+        background: url('/../public/icons/Rectangle 5.png') no-repeat;
+        transition: transform .4s ease-in;
+        transform: rotateZ(180deg);
+      }
+  
+      &.expanded::before {
+        transform: rotateZ(0deg);
+      }
+    }
+  }
+
+  .article__details-list {
+    width: 100%;
+    padding-left: 20px;
+    margin-bottom: 30px;
+  }
+
+  .article__details-list .item-list p {
+    color: $bullet-color;
+  }
+
+  .article__details-label {
+    font-size: $font-size__l;
+    margin-bottom: 10px;
+  }
+
+  .annotation {
+    padding-left: 20px;
+  }
+
+  label {
+    margin-top: 20px;
+  }
+
+  .note {
+     margin-top: auto;
+  }
+}
+
+@media (min-width: 568px) {
+  .information {
+    .article {
+      display: flex;
+      flex-wrap: wrap;
+
+      img {
+        margin: -1px;
+      }
+    }
+
+    .article__details-list {
+      width: 100%;
+      column-count: 3;
+      column-gap: 30px;
+      padding-left: 10px;
+    }
+
+    .article__details {
+      width: 100%;
+      max-width: 980px;
+      padding: 0 20px 17px 7%;
+    }
+
+    .item-list:before {
+      margin-left: -0.8em;
+    }
+
+    .annotation {
+      padding-left: 10px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .information-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}

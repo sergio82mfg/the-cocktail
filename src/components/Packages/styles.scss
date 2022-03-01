@@ -1,0 +1,139 @@
+$packages__pag: .795%;
+$packages__total-gaps: $packages__pag * 4;
+
+.packages {
+    > li {
+        margin-bottom: 20px;
+    }
+}
+
+.stars {
+    margin-left: 34px;
+    
+    svg {
+        margin-right: 5px;
+    }
+}
+
+.packages-container {
+    padding: 19px;
+
+    .page-title {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .bussiness {
+        font-weight: 400;
+    }
+}
+
+.package {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    background: #FFFFFF;
+    border: 1px solid #C9E3F9;
+    box-sizing: border-box;
+    border-radius: 2px;
+    padding: 17px;
+
+    .item-list {
+        padding: 0 6px;
+    }
+    
+    .title-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        margin-bottom: 15px;
+        min-height: 54px;
+        position: relative;
+        text-align: center;
+
+        &::after {
+            display: block;
+            content: '';
+            width: 70px;
+            border-top: 1px solid #C9E3F9;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    label {
+        margin-top: 20px;
+    }
+}
+
+
+@media (min-width: 470px) {
+    .packages {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    
+        > li {
+            width: calc(50% - ($packages__total-gaps / 5));
+            margin-right: $packages__pag;
+        }
+    }
+
+    .package {
+        height: 530px;
+    
+        label {
+            margin-top: auto;
+        }
+    }
+}
+
+@media (min-width: 470px) and (max-width: 709px) {
+    .packages {
+        > li {
+            &:nth-of-type(2n) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 710px) and (max-width: 934px) {
+    .packages {
+        > li {
+            width: calc(33.3333% - ($packages__total-gaps / 5));
+        
+            &:nth-of-type(3n) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 935px) and (max-width: 1243px) {
+    .packages {
+        > li {
+            width: calc(25% - ($packages__total-gaps / 5));
+        
+            &:nth-of-type(4n) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@media (min-width: 1244px) {
+    .packages {
+        > li {
+            width: calc(20% - ($packages__total-gaps / 5));
+            min-width: 225px;
+    
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+}

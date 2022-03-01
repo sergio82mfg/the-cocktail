@@ -1,0 +1,20 @@
+@import '../variables.scss';
+
+$section__border-color: $border-color-1;
+
+.section {
+  padding: 17px;
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid $section__border-color;
+}
+
+.section__header-section {
+  padding: 16px 22px 33px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.section__item-section:not(:last-of-type) {
+  margin-bottom: 23px;
+}

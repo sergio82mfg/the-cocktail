@@ -1,0 +1,85 @@
+@import '../variables.scss';
+
+$article__border-color: $border-color-2;
+
+.article {
+  border: 1px solid $article__border-color;
+  position: relative;
+
+  img {
+    margin: -1px auto;
+  }
+
+  .text-description {
+    margin-bottom: 10px;
+  }
+}
+
+.article__item-section {
+  &:not(:last-of-type) {
+    margin-bottom: 23px;
+  }
+}
+
+.article__details {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.article__item-description {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+  width: 100%
+}
+
+.article__note {
+  margin-top: auto;
+  font-family: $font-family__secondary;
+  font-size: $font-size__m;
+  font-weight: $font-weigth__bold;
+  line-height: $line-height__m;
+  color: $blue-3;
+
+  &.collapsible {
+    &:after {
+      display: inline-block;
+      content: '';
+      width: 12px;
+      height: 7px;
+      margin-left: 17px;
+      background: url('/../public/icons/Rectangle 5.png') no-repeat;
+      background-size: cover;
+      transition: transform .4s ease-in;
+      transform: rotateZ(180deg);
+    }
+
+    &.expanded::after {
+      transform: rotateZ(0deg);
+    }
+  }
+}
+
+.article__label {
+  position: absolute;
+  right: -1px;
+  width:  86px;
+  height: 32px;
+  font-size: 18px;
+  line-height: 23px;
+  padding: 4px 7px;
+}
+
+@media (min-width: 568px) {
+  article {
+    display: flex;
+
+    img {
+      margin: -1px;
+    }
+  }
+  .article__item-description {
+    width: calc(100% - 270px);
+  }
+}
